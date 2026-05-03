@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+.claude/
+assets/Personal Design Kit-handoff.zip
+
+# Large media — host these on a CDN or cloud storage, not in git
+assets/images/*.mp4
+assets/images/*.png
+assets/images/*.jpg
+assets/images/*.jpeg

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="0;url=work.html" />
+  <title>Ann Marie Designs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single&family=Courier+Prime:wght@400;700&family=Funnel+Sans:wght@300;400;600&family=Geist+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body class="splash">
+
+  <video class="splash-video-bg" id="bgVideo" autoplay muted loop playsinline>
+    <source src="assets/images/enhanced_animatedbackground.mp4" type="video/mp4" />
+  </video>
+
+  <header class="splash-header">
+    <span class="splash-logo">ANN MARIE DESIGNS</span>
+    <button class="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main class="splash-main">
+    <div class="splash-card">
+      <div class="splash-card-top">
+        <p class="splash-greeting">Hi there, I'm Ann Marie -</p>
+        <h1 class="splash-title">welcome to my digital oasis 🌴</h1>
+      </div>
+      <div class="splash-info-row">
+        <div class="splash-info-box">
+          UX Designer based in Washington DC with 4+ years experience
+        </div>
+        <div class="splash-info-box">
+          <strong>Now:</strong> Product Designer @ Freddie Mac - myOptigo platform
+        </div>
+        <div class="splash-info-box">
+          <strong>Prev:</strong> UX @ Wells Fargo - Small Business Banking Technology
+        </div>
+      </div>
+      <a href="work.html" class="splash-enter-btn">ENTER</a>
+    </div>
+  </main>
+
+  <button class="video-toggle" id="videoToggle" aria-label="Pause video">
+    <svg id="iconPause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="3" width="4" height="18" rx="1"/>
+      <rect x="15" y="3" width="4" height="18" rx="1"/>
+    </svg>
+    <svg id="iconPlay" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none">
+      <path d="M6 3l15 9-15 9V3z"/>
+    </svg>
+  </button>
+
+  <script>
+    const video = document.getElementById('bgVideo');
+    const btn = document.getElementById('videoToggle');
+    const iconPause = document.getElementById('iconPause');
+    const iconPlay = document.getElementById('iconPlay');
+
+    video.playbackRate = 0.5;
+    video.addEventListener('canplay', () => { video.playbackRate = 0.5; });
+
+    btn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        iconPause.style.display = '';
+        iconPlay.style.display = 'none';
+        btn.setAttribute('aria-label', 'Pause video');
+      } else {
+        video.pause();
+        iconPause.style.display = 'none';
+        iconPlay.style.display = '';
+        btn.setAttribute('aria-label', 'Play video');
+      }
+    });
+  </script>
+
+</body>
+</html>

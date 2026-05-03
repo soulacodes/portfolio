@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Ann Marie Kernen</title>
+  <link rel="stylesheet" href="neobrutalist.css" />
+</head>
+<body>
+
+  <nav class="nb-nav">
+    <a href="work.html" class="nb-logo">ANN MARIE<span class="nb-logo-slash">//</span></a>
+    <div class="nb-nav-links">
+      <a href="work.html" class="nb-nav-link">▸ WORK</a>
+      <a href="about.html" class="nb-nav-link">ABOUT</a>
+    </div>
+    <div class="nb-nav-spacer"></div>
+    <a href="contact.html" class="nb-nav-cta nb-nav-link--active" style="background:var(--lemon); color:var(--ink);">CONTACT ▸</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="nb-contact-hero">
+    <div class="nb-contact-hero-inner">
+      <div class="nb-hero-eyebrow">
+        <span class="nb-dot nb-dot--pink"></span>
+        <span>// Open to freelance, full-time, and interesting problems</span>
+      </div>
+      <h1 class="nb-contact-hero-title">
+        Got a complex<br /><span class="nb-hero-highlight">problem?</span>
+      </h1>
+      <p class="nb-contact-hero-sub">send it over. i'm ann marie — ux designer in dc. i work best on systems that real people have to use every day.</p>
+    </div>
+  </section>
+
+  <!-- Body: info + form -->
+  <section class="nb-contact-body">
+    <div class="nb-contact-body-inner">
+
+      <!-- Left: direct contact -->
+      <div>
+        <div class="nb-section-marker" style="margin-bottom: 36px;">
+          <span class="nb-section-num">▸</span>
+          <h2>Direct Contact</h2>
+        </div>
+
+        <div>
+          <p class="nb-contact-info-label">// Email</p>
+          <p class="nb-contact-info-value">
+            <a href="mailto:ann.kernen@gmail.com">ann.kernen@gmail.com</a>
+          </p>
+        </div>
+
+        <div>
+          <p class="nb-contact-info-label">// LinkedIn</p>
+          <p class="nb-contact-info-value">
+            <a href="https://www.linkedin.com/in/annmariekernen" target="_blank">annmariekernen ↗</a>
+          </p>
+        </div>
+
+        <div>
+          <p class="nb-contact-info-label">// Resume</p>
+          <p class="nb-contact-info-value">
+            <a href="assets/resumes/Ann-Marie-Kernen-Resume-Colorful.pdf" target="_blank">Download PDF ↗</a>
+          </p>
+        </div>
+
+        <p class="nb-contact-note">i typically respond within a day or two. if you're reaching out about a role or project, a brief about the work helps a lot — what you're building, where you're stuck, timeline.</p>
+      </div>
+
+      <!-- Right: form -->
+      <div>
+        <p class="nb-form-heading">// Or send a note directly</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="nb-form-group">
+            <label class="nb-label" for="name">Your Name</label>
+            <input class="nb-input" type="text" id="name" name="name" placeholder="First Last" required />
+          </div>
+
+          <div class="nb-form-group">
+            <label class="nb-label" for="email">Email</label>
+            <input class="nb-input" type="email" id="email" name="email" placeholder="you@email.com" required />
+          </div>
+
+          <div class="nb-form-group">
+            <label class="nb-label" for="subject">What's this about?</label>
+            <input class="nb-input" type="text" id="subject" name="subject" placeholder="Freelance / Full-time / Just saying hi" />
+          </div>
+
+          <div class="nb-form-group">
+            <label class="nb-label" for="message">Message</label>
+            <textarea class="nb-textarea" id="message" name="message" placeholder="Tell me what you're working on..." required></textarea>
+          </div>
+
+          <div class="nb-form-submit">
+            <button type="submit" class="nb-btn nb-btn--pink">SEND IT ▸</button>
+          </div>
+        </form>
+
+        <div class="nb-form-success" id="formSuccess">
+          ✦ Message sent — I'll be in touch soon.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="nb-footer">
+    <div class="nb-footer-inner">
+      <div>
+        <a href="work.html" class="nb-footer-logo">ANN MARIE<span class="nb-footer-logo-slash">//</span></a>
+        <p class="nb-footer-tagline">ux designer. enterprise systems. real workflows. washington dc.</p>
+      </div>
+      <div class="nb-footer-col">
+        <p class="nb-footer-col-title">// WORK</p>
+        <ul>
+          <li><a href="work.html">Case Studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nb-footer-col">
+        <p class="nb-footer-col-title">// CONNECT</p>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/annmariekernen" target="_blank">LinkedIn ↗</a></li>
+          <li><a href="mailto:ann.kernen@gmail.com">Email ↗</a></li>
+        </ul>
+      </div>
+      <div class="nb-footer-bottom">
+        <span>// © 2026 · Ann Marie Kernen · Built in HTML</span>
+        <span>Washington DC</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      // Build mailto link with form data as fallback
+      const name    = encodeURIComponent(document.getElementById('name').value);
+      const subject = encodeURIComponent(document.getElementById('subject').value || 'Portfolio contact');
+      const message = encodeURIComponent(
+        `From: ${document.getElementById('name').value}\n\n${document.getElementById('message').value}`
+      );
+      window.location.href = `mailto:ann.kernen@gmail.com?subject=${subject}&body=${message}`;
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
