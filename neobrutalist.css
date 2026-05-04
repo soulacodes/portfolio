@@ -1201,13 +1201,14 @@ a:hover {
   color: var(--ink);
   border: var(--border-default);
   border-bottom: none;
+  transition: box-shadow 240ms ease;
 }
 
 .nb-accordion details:last-child {
   border-bottom: var(--border-default);
 }
 
-.nb-accordion details[open] {
+.nb-accordion details.is-open {
   box-shadow: var(--shadow-md);
 }
 
@@ -1235,7 +1236,7 @@ a:hover {
   flex-shrink: 0;
 }
 
-.nb-accordion details[open] > summary::after {
+.nb-accordion details.is-open > summary::after {
   transform: rotate(90deg);
 }
 

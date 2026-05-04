@@ -138,12 +138,104 @@
   </footer>
 
   <script>
-    function toggleAccordion(btn) {
+    (function () {
+      const DURATION = 240;
       const details = document.querySelectorAll('.nb-accordion details');
-      const isExpanded = btn.textContent.startsWith('COLLAPSE');
-      details.forEach(d => d.open = !isExpanded);
-      btn.textContent = isExpanded ? 'EXPAND ALL ▸' : 'COLLAPSE ALL ▸';
-    }
+      const anims = new WeakMap();
+
+      function openItem(d) {
+        const body = d.querySelector('.nb-accordion-body');
+        const prev = anims.get(d);
+        if (prev) prev.cancel();
+
+        d.setAttribute('open', '');
+        d.classList.add('is-open');
+        body.style.overflow = 'hidden';
+        body.style.borderTopWidth = '1px';
+
+        // Clear inline padding so scrollHeight reads the natural CSS value,
+        // then immediately re-apply 0 so the animation starts from 0.
+        body.style.paddingTop = '';
+        body.style.paddingBottom = '';
+        const targetH  = body.scrollHeight;
+        const targetPT = parseFloat(getComputedStyle(body).paddingTop)    || 16;
+        const targetPB = parseFloat(getComputedStyle(body).paddingBottom) || 22;
+        body.style.paddingTop    = '0px';
+        body.style.paddingBottom = '0px';
+
+        const a = body.animate(
+          [
+            { maxHeight: '0px',         paddingTop: '0px',         paddingBottom: '0px',         opacity: '0' },
+            { maxHeight: targetH + 'px', paddingTop: targetPT + 'px', paddingBottom: targetPB + 'px', opacity: '1' }
+          ],
+          { duration: DURATION, easing: 'ease-out' }
+        );
+        anims.set(d, a);
+        a.onfinish = () => {
+          body.style.maxHeight    = '';
+          body.style.paddingTop   = '';
+          body.style.paddingBottom = '';
+          body.style.opacity      = '';
+          anims.delete(d);
+        };
+      }
+
+      function closeItem(d) {
+        const body = d.querySelector('.nb-accordion-body');
+        const prev = anims.get(d);
+        if (prev) prev.cancel();
+
+        d.classList.remove('is-open');
+        body.style.borderTopWidth = '0';
+        body.style.overflow = 'hidden';
+
+        const startH  = body.getBoundingClientRect().height;
+        const startPT = parseFloat(getComputedStyle(body).paddingTop)    || 16;
+        const startPB = parseFloat(getComputedStyle(body).paddingBottom) || 22;
+
+        const a = body.animate(
+          [
+            { maxHeight: startH + 'px', paddingTop: startPT + 'px', paddingBottom: startPB + 'px', opacity: '1' },
+            { maxHeight: '0px',         paddingTop: '0px',          paddingBottom: '0px',          opacity: '0' }
+          ],
+          { duration: DURATION, easing: 'ease-in' }
+        );
+        anims.set(d, a);
+        a.onfinish = () => {
+          body.style.maxHeight     = '0';
+          body.style.paddingTop    = '0';
+          body.style.paddingBottom = '0';
+          body.style.opacity       = '0';
+          d.removeAttribute('open');
+          anims.delete(d);
+        };
+      }
+
+      details.forEach(d => {
+        const body = d.querySelector('.nb-accordion-body');
+        body.style.overflow = 'hidden';
+        if (d.open) {
+          d.classList.add('is-open');
+        } else {
+          body.style.maxHeight     = '0';
+          body.style.paddingTop    = '0';
+          body.style.paddingBottom = '0';
+          body.style.opacity       = '0';
+          body.style.borderTopWidth = '0';
+        }
+
+        d.querySelector('summary').addEventListener('click', e => {
+          e.preventDefault();
+          d.open ? closeItem(d) : openItem(d);
+        });
+      });
+
+      window.toggleAccordion = function (btn) {
+        const isExpanded = btn.textContent.startsWith('COLLAPSE');
+        details.forEach(d => isExpanded ? closeItem(d) : openItem(d));
+        btn.textContent = isExpanded ? 'EXPAND ALL ▸' : 'COLLAPSE ALL ▸';
+      };
+    })();
   </script>
 </body>
 </html>
