@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Three — Ann Marie Kernen</title>
+  <title>The Personas Library — Ann Marie Kernen</title>
   <link rel="stylesheet" href="neobrutalist.css" />
 </head>
 <body>
@@ -22,90 +22,129 @@
     <div class="nb-case-hero-inner">
       <div class="nb-case-tags">
         <span class="nb-case-tag nb-case-tag--pink">CASE STUDY</span>
-        <span class="nb-case-tag nb-case-tag--paper">▸ DESIGN SYSTEM</span>
-        <span class="nb-case-tag nb-case-tag--paper">SEP – DEC 2023</span>
+        <span class="nb-case-tag nb-case-tag--paper">▸ ONGOING INITIATIVE</span>
+        <span class="nb-case-tag nb-case-tag--paper">FREDDIE MAC · MULTIFAMILY PRODUCT DESIGN</span>
       </div>
-      <h1 class="nb-case-hero-title">Project Three</h1>
-      <p class="nb-case-hero-sub">Placeholder description — replace with a one- or two-sentence summary of what this project was, who it was for, and what you did.</p>
+      <h1 class="nb-case-hero-title">The Personas Library</h1>
+      <p class="nb-case-hero-sub">I designed and built a living personas library for the myOptigo platform — replacing a five-year-old set of static persona sheets with a structured, AI-readable schema that anyone on the product team can actually use.</p>
       <div class="nb-case-facts">
         <div class="nb-case-fact">
           <div class="nb-case-fact-label">// Role</div>
-          <div class="nb-case-fact-value">Design Systems Lead</div>
+          <div class="nb-case-fact-value">UX Designer — research, schema design, facilitation</div>
         </div>
         <div class="nb-case-fact">
           <div class="nb-case-fact-label">// Timeline</div>
-          <div class="nb-case-fact-value">Sep – Dec 2023</div>
+          <div class="nb-case-fact-value">Ongoing — schema built and library in beta, user validation in progress</div>
         </div>
         <div class="nb-case-fact">
           <div class="nb-case-fact-label">// Team</div>
-          <div class="nb-case-fact-value">3 designers, 2 engineers</div>
+          <div class="nb-case-fact-value">2 UX managers, 1 design system manager, broader product org</div>
         </div>
         <div class="nb-case-fact">
-          <div class="nb-case-fact-label">// Tools</div>
-          <div class="nb-case-fact-value">Figma, Storybook, Zeroheight</div>
+          <div class="nb-case-fact-label">// Type</div>
+          <div class="nb-case-fact-value">Internal UX infrastructure / AI tooling</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 01: Overview -->
+  <!-- Metric row -->
+  <section class="nb-metric-row">
+    <div class="nb-metric-row-inner">
+      <div class="nb-metric">
+        <div class="nb-metric-label">// User Types</div>
+        <div class="nb-metric-value nb-metric-value--cyan">30+</div>
+        <div class="nb-metric-note">distinct personas in the myOptigo ecosystem</div>
+      </div>
+      <div class="nb-metric">
+        <div class="nb-metric-label">// Old Library</div>
+        <div class="nb-metric-value nb-metric-value--pink">5 yrs</div>
+        <div class="nb-metric-note">static sheets, untouched since 2020</div>
+      </div>
+      <div class="nb-metric">
+        <div class="nb-metric-label">// In Beta</div>
+        <div class="nb-metric-value nb-metric-value--lime">~50%</div>
+        <div class="nb-metric-note">personas live and queryable today</div>
+      </div>
+      <div class="nb-metric">
+        <div class="nb-metric-label">// Format</div>
+        <div class="nb-metric-value nb-metric-value--lemon">YAML</div>
+        <div class="nb-metric-note">human-readable, AI-queryable, maintainable</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
   <section class="nb-prose">
+    <div class="nb-prose-inner">
+      <div class="nb-section-marker">
+        <span class="nb-section-num">// PROBLEM</span>
+      </div>
+      <p>When I joined Freddie Mac in late 2025, the team had a personas library. Technically.</p>
+      <p>In practice, it was a set of static graphic sheets created by a third-party consulting firm in 2020. Five years old, incomplete, and largely untouched. The kind of thing a new hire might scan on their first week, then never open again. Traditional personas in the classic sense: stock photo, name, age, job title, a little fictional vignette. Carly, 36, Underwriting Analyst. That sort of thing.</p>
+      <p>The myOptigo platform serves Freddie Mac Multifamily and has more than 30 distinct user types. 30 personas is a lot to keep current, consistent, and actually used.</p>
+      <p>When the team set their 2026 goals, updating the personas library was near the top of the list. The question was: update them into what?</p>
+      <p><strong>The real problem wasn't that the personas were old. It was that the format itself made them almost impossible to actually use.</strong></p>
+    </div>
+  </section>
+
+  <!-- Section 01: Define -->
+  <section class="nb-prose" style="background:var(--paper-2);">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[01]</span>
-        <h2>Overview</h2>
+        <h2>Define</h2>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      <p>A refreshed set of static sheets would have the same problem in another five years.</p>
+      <p>I came to my manager with a different thesis: what if the personas weren't a designed artifact at all, but a structured data library — readable by a human, queryable by an AI, and maintainable over time without starting from scratch every few years?</p>
+      <p>The format I proposed was YAML. Plain text, structured enough for an AI to parse, simple enough for a designer to update. Each persona would live as its own README-style file following a standardized schema. Feed those files into a Copilot Notebook, and anyone on the team — designers, POs, developers, even business stakeholders — could query the library in plain language. "What are the main pain points for an Underwriting Analyst?" Done.</p>
+      <p>My manager liked it. The design system manager liked it. They asked me to present it to the broader team.</p>
+      <div class="nb-image-placeholder">[ YAML schema example — structured persona file ]</div>
     </div>
   </section>
 
-  <!-- Section 02: The Problem -->
-  <section class="nb-prose" style="background:var(--paper-2);">
+  <!-- Section 02: Research -->
+  <section class="nb-prose">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[02]</span>
-        <h2>The Problem</h2>
+        <h2>Research — Building the Schema</h2>
       </div>
-      <p>Placeholder problem statement. Describe the challenge you were solving, who it affected, and why it mattered. What was broken or missing?</p>
-      <blockquote>"A placeholder user quote that illustrates the core pain point. Replace this with a real insight from your research."</blockquote>
+      <p>I drafted an initial schema myself, drawing on the standard building blocks of a traditional persona: job responsibilities, pain points, goals, tools used, key workflows. Then I brought it to the team.</p>
+      <p>We ran a FigJam whiteboarding session where I presented the vision and asked a simple question: if you could query a persona, what would you want to know? The feedback shaped the final schema — by the end, it reflected what the team actually needed, not just what I'd assumed.</p>
+      <div class="nb-image-placeholder">[ FigJam session — schema co-design whiteboard ]</div>
+      <p>For the research itself, I used Microsoft Teams Copilot, which has access to internal documentation available across the organization. I used a consistent prompt for every persona — same structure, same questions — asking Copilot to generate a research report covering core responsibilities, pain points, goals, and role context. The persona list itself came from my manager through her own stakeholder conversations.</p>
+      <p>The Copilot reports were dense. The YAML files are not. That compression was intentional — the schema keeps only what someone would actually need when making a design or product decision.</p>
     </div>
   </section>
 
-  <!-- Section 03: Research -->
-  <section class="nb-prose">
-    <div class="nb-prose-inner">
-      <div class="nb-section-marker">
-        <span class="nb-section-num">[03]</span>
-        <h2>Research</h2>
-      </div>
-      <p>Placeholder research section. Describe your methods — interviews, surveys, usability tests — and key findings. What did you learn about your users?</p>
-      <div class="nb-image-placeholder">[ Research artifact / affinity map / user journey ]</div>
-    </div>
-  </section>
-
-  <!-- Section 04: Design Process -->
+  <!-- Section 03: Build -->
   <section class="nb-prose" style="background:var(--paper-2);">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
-        <span class="nb-section-num">[04]</span>
-        <h2>Design Process</h2>
+        <span class="nb-section-num">[03]</span>
+        <h2>Build — The Library in Beta</h2>
       </div>
-      <p>Placeholder process section. Walk through how you moved from insights to concepts to refined designs. Include sketches, wireframes, or iteration notes.</p>
-      <div class="nb-image-placeholder">[ Wireframes or early sketches ]</div>
-      <p>Additional context about design decisions, tradeoffs, or pivots you made along the way.</p>
-      <div class="nb-image-placeholder">[ Mid-fidelity or final mockups ]</div>
+      <p>The library currently covers roughly half of the 30+ personas in the myOptigo ecosystem. Each lives as a structured YAML file, and together they're loaded into a Copilot Notebook that any team member can query today.</p>
+      <p>It's in beta. It works. People can use it.</p>
+      <p>The next phase is validation — user interviews with people from each represented role to verify that what Copilot surfaced actually reflects their day-to-day reality. The schemas will be updated based on what we learn.</p>
     </div>
   </section>
 
-  <!-- Section 05: Outcome -->
+  <!-- Conclusion: Where It Stands -->
   <section class="nb-prose">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
-        <span class="nb-section-num">[05]</span>
-        <h2>Outcome</h2>
+        <span class="nb-section-num">⌗</span>
+        <h2>Where It Stands + What's Next</h2>
       </div>
-      <p>Placeholder outcome section. What shipped? What were the results — qualitative or quantitative? What would you do differently?</p>
+      <ul>
+        <li><strong>User validation interviews</strong> — the most important next step. Real conversations will catch the gaps that no internal document captures.</li>
+        <li><strong>Completing the full library</strong> — the schema and process are established; it's a matter of working through the remaining personas.</li>
+        <li><strong>Broader rollout</strong> — the longer-term vision is opening the library to POs, developers, and business stakeholders across the platform.</li>
+        <li><strong>Maintenance model</strong> — establishing a lightweight process for keeping schemas current as the platform evolves.</li>
+      </ul>
+      <p>The goal was never to produce a prettier version of what existed before. It was to build something the team would actually reach for.</p>
     </div>
   </section>
 

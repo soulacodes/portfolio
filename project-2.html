@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Two — Ann Marie Kernen</title>
+  <title>Procedures Updater — Ann Marie Kernen</title>
   <link rel="stylesheet" href="neobrutalist.css" />
 </head>
 <body>
@@ -22,90 +22,158 @@
     <div class="nb-case-hero-inner">
       <div class="nb-case-tags">
         <span class="nb-case-tag nb-case-tag--pink">CASE STUDY</span>
-        <span class="nb-case-tag nb-case-tag--paper">▸ WEB PLATFORM</span>
-        <span class="nb-case-tag nb-case-tag--paper">MAY – AUG 2024</span>
+        <span class="nb-case-tag nb-case-tag--paper">▸ INTERNAL TOOL</span>
+        <span class="nb-case-tag nb-case-tag--paper">WELLS FARGO · SMALL BUSINESS BANKING TECH</span>
       </div>
-      <h1 class="nb-case-hero-title">Project Two</h1>
-      <p class="nb-case-hero-sub">Placeholder description — replace with a one- or two-sentence summary of what this project was, who it was for, and what you did.</p>
+      <h1 class="nb-case-hero-title">Procedures Updater</h1>
+      <p class="nb-case-hero-sub">I led UX discovery and design for an AI-powered internal tool that automated the most tedious part of enterprise change management: keeping procedure documentation in sync with technology updates.</p>
       <div class="nb-case-facts">
         <div class="nb-case-fact">
           <div class="nb-case-fact-label">// Role</div>
-          <div class="nb-case-fact-value">UX/UI Designer</div>
+          <div class="nb-case-fact-value">UX Lead — discovery, research, wireframing</div>
         </div>
         <div class="nb-case-fact">
           <div class="nb-case-fact-label">// Timeline</div>
-          <div class="nb-case-fact-value">May – Aug 2024</div>
+          <div class="nb-case-fact-value">~3 months, discovery through wireframe handoff</div>
         </div>
         <div class="nb-case-fact">
           <div class="nb-case-fact-label">// Team</div>
-          <div class="nb-case-fact-value">1 designer, 3 engineers, 1 PM</div>
-        </div>
-        <div class="nb-case-fact">
-          <div class="nb-case-fact-label">// Tools</div>
-          <div class="nb-case-fact-value">Figma, Hotjar, Miro</div>
+          <div class="nb-case-fact-value">1 UX (me), 1 engineering manager, 1 scrum master/PO, 3–4 junior engineers (AI rotation)</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 01: Overview -->
+  <!-- Metric row -->
+  <section class="nb-metric-row">
+    <div class="nb-metric-row-inner">
+      <div class="nb-metric">
+        <div class="nb-metric-label">// Time Cost: Before</div>
+        <div class="nb-metric-value nb-metric-value--pink">8–10 hrs</div>
+        <div class="nb-metric-note">per Change Management teammate, per week</div>
+      </div>
+      <div class="nb-metric">
+        <div class="nb-metric-label">// Time Cost: After</div>
+        <div class="nb-metric-value nb-metric-value--lime">~30 min</div>
+        <div class="nb-metric-note">reviewing AI-suggested changes</div>
+      </div>
+      <div class="nb-metric">
+        <div class="nb-metric-label">// Wireframe</div>
+        <div class="nb-metric-value nb-metric-value--lemon">2 days</div>
+        <div class="nb-metric-note">once the process was understood</div>
+      </div>
+      <div class="nb-metric">
+        <div class="nb-metric-label">// First Build</div>
+        <div class="nb-metric-value nb-metric-value--cyan">&lt;1 wk</div>
+        <div class="nb-metric-note">working first pass via GitHub Copilot</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proprietary note -->
+  <section class="nb-prose">
+    <div class="nb-prose-inner">
+      <blockquote><em>This was proprietary internal work at a financial institution. Original files stayed at the bank — the screens here are faithful recreations.</em></blockquote>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="nb-prose" style="background:var(--paper-2);">
+    <div class="nb-prose-inner">
+      <div class="nb-section-marker">
+        <span class="nb-section-num">// PROBLEM</span>
+      </div>
+      <p>At Wells Fargo, every core job responsibility had to be documented in formal procedures, reviewed and approved by someone outside the team before any technology change could go to production.</p>
+      <p>That sounds manageable until you realize: technology changes constantly.</p>
+      <p>In practice, this meant change management employees were doing two things that ate enormous amounts of their time. First, sitting through every single tech release demo call — sometimes hours long — just to spot anything that might affect a procedure they owned. Then, once they'd identified a change, manually rewriting the relevant procedure documentation themselves. We estimated this was costing employees upwards of 8–10 hours a week. Every week.</p>
+      <p>Nobody had built anything to fix it. And there was no way technology could go to production until those procedures were updated and approved. The bottleneck was real, and it was expensive.</p>
+      <p><strong>How might we automate the detection of procedure changes so that the right people are notified with the right information, without disrupting the existing approval process?</strong></p>
+    </div>
+  </section>
+
+  <!-- Section 01: Empathize -->
   <section class="nb-prose">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[01]</span>
-        <h2>Overview</h2>
+        <h2>Empathize — The Labyrinth</h2>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      <p>Before a single wireframe could be drawn, we had to understand the process we were designing for. That turned out to be the hardest part of the whole project.</p>
+      <p>On paper, the policy update process sounded straightforward. In reality it was a Russian nesting doll — every question we answered revealed three more layers underneath. <em>(The team nicknamed this phase White Rabbit. As in, follow it long enough and suddenly you're very far from where you started.)</em></p>
+      <p><strong>The core challenge: no one owned the full picture.</strong> The process touched multiple teams, multiple approval chains, and a web of forms and compliance requirements that had evolved organically over years. Nobody had ever mapped it end to end.</p>
+      <p>So we did.</p>
+      <p>I led the stakeholder interviews and process mapping sessions, leaning on my manager's two decades of institutional relationships to get us in the right rooms. My job was asking the right questions and synthesizing what we heard into something we could actually design against.</p>
+      <p>The goal was never to redesign the process. It was to work within it and remove the bottleneck without sidestepping a single compliance requirement. That distinction shaped every design decision that followed.</p>
     </div>
   </section>
 
-  <!-- Section 02: The Problem -->
+  <!-- Section 02: Define -->
   <section class="nb-prose" style="background:var(--paper-2);">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[02]</span>
-        <h2>The Problem</h2>
+        <h2>Define</h2>
       </div>
-      <p>Placeholder problem statement. Describe the challenge you were solving, who it affected, and why it mattered. What was broken or missing?</p>
-      <blockquote>"A placeholder user quote that illustrates the core pain point. Replace this with a real insight from your research."</blockquote>
+      <p>From discovery, a few things became clear:</p>
+      <p><strong>The right person had to get the right notification.</strong> Routing had to be precise across multiple procedure owners and teams. When a procedure they owned was flagged, they'd receive an email with a direct link to their review queue.</p>
+      <p><strong>Trust was everything.</strong> Employees were being asked to rely on AI-generated edits to update procedure documentation. The tool had to make them feel confident, not anxious.</p>
+      <p><strong>The process couldn't change.</strong> Two levels of approval were non-negotiable. The tool had to route through both, not around them.</p>
     </div>
   </section>
 
-  <!-- Section 03: Research -->
+  <!-- Section 03: Design -->
   <section class="nb-prose">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[03]</span>
-        <h2>Research</h2>
+        <h2>Design</h2>
       </div>
-      <p>Placeholder research section. Describe your methods — interviews, surveys, usability tests — and key findings. What did you learn about your users?</p>
-      <div class="nb-image-placeholder">[ Research artifact / affinity map / user journey ]</div>
+      <p>Once the process was mapped, the wireframing took two days. That's not a flex — it's a reflection of how much clarity the discovery work had bought us.</p>
+
+      <p><strong>The Feed</strong><br>A table-style landing page showing all procedures flagged for review: procedure name, owner, category, last updated date, status, and an AI confidence score giving users an at-a-glance read on which updates needed careful attention and which were routine.</p>
+      <div class="nb-image-placeholder">[ The Feed — table view of flagged procedures with AI confidence scores ]</div>
+
+      <p><strong>The Review View</strong><br>Clicking in opened a summary of changes first, then an optional full text view: side-by-side comparison of the existing and AI-recommended procedure, with removals in red strikethrough and additions in green underline.</p>
+      <div class="nb-image-placeholder">[ Review View — side-by-side diff, existing vs. AI-recommended procedure ]</div>
+
+      <p><strong>Edge case: one code change, multiple procedures</strong><br>When a single change impacted multiple procedures, the summary view surfaced each one with clear subheaders. The full text view used collapsible sections so users could work through them one at a time without losing context.</p>
+
+      <p><strong>The confidence score</strong><br>My idea, and one of the most well-received parts of the design. For a tool asking employees to trust machine-generated edits to procedure documentation, surfacing the model's uncertainty felt essential as a trust signal, not just a UX detail. Engineering complexity pushed it out of MVP, but the plan was always to ship it.</p>
     </div>
   </section>
 
-  <!-- Section 04: Design Process -->
+  <!-- Section 04: Iterate -->
   <section class="nb-prose" style="background:var(--paper-2);">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[04]</span>
-        <h2>Design Process</h2>
+        <h2>Iterate</h2>
       </div>
-      <p>Placeholder process section. Walk through how you moved from insights to concepts to refined designs. Include sketches, wireframes, or iteration notes.</p>
-      <div class="nb-image-placeholder">[ Wireframes or early sketches ]</div>
-      <p>Additional context about design decisions, tradeoffs, or pivots you made along the way.</p>
-      <div class="nb-image-placeholder">[ Mid-fidelity or final mockups ]</div>
+      <p>A few rounds of feedback from the engineering team shaped the approval routing details across both required sign-off levels. The tool handled the first round internally. For the second, a form had to be routed to the compliance team to kick off their process. Getting that handoff right in the UI took a few passes.</p>
     </div>
   </section>
 
-  <!-- Section 05: Outcome -->
+  <!-- Section 05: Handoff + Outcome -->
   <section class="nb-prose">
     <div class="nb-prose-inner">
       <div class="nb-section-marker">
         <span class="nb-section-num">[05]</span>
-        <h2>Outcome</h2>
+        <h2>Handoff + Outcome</h2>
       </div>
-      <p>Placeholder outcome section. What shipped? What were the results — qualitative or quantitative? What would you do differently?</p>
+      <p>I handed the wireframes to the junior engineering team — part of Wells Fargo Small Business Banking Tech's first AI rotation cohort, a program that embedded recent college grads on short-cycle internal AI tool projects.</p>
+      <p>They fed the wireframes into GitHub Copilot. A working first pass was done in under a week; full AI integration took closer to a month. The tool was socialized broadly and received overwhelmingly positive feedback, both for the UX and for what it represented: a working solution to a pain point that had frustrated the business for years. The projected time savings alone told the story — what had been eating 8–10 hours a week per employee was now closer to 30 minutes of reviewing AI-suggested changes. My manager called me an artist. It was a pretty minimal UI, but I'll take it.</p>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="nb-prose" style="background:var(--paper-2);">
+    <div class="nb-prose-inner">
+      <div class="nb-section-marker">
+        <span class="nb-section-num">⌗</span>
+        <h2>Conclusion + Next Steps</h2>
+      </div>
+      <p>The biggest lesson: know where the real work is. The wireframe was two days. The discovery was months. And the discovery is what made the wireframe possible.</p>
+      <p>The natural next step was already on the roadmap: an agentic AI layer that could automatically fill out the compliance routing form on behalf of the user. That form was the last human-touched bottleneck in the process, and removing it felt like the logical conclusion of what we'd started. I moved on to a new role before the tool reached production — if I could go back, I'd want to run it with real users, measure the actual time savings, and find where the friction still lives.</p>
     </div>
   </section>
 
