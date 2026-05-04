@@ -221,5 +221,15 @@
     </div>
   </footer>
 
+  <button class="nb-back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function(){
+        btn.classList.toggle('nb-visible', window.scrollY > 400);
+      });
+    })();
+  </script>
 </body>
 </html>
