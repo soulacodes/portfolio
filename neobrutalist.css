@@ -131,6 +131,7 @@ a:hover {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: background var(--dur-fast) var(--ease-snap);
 }
 
